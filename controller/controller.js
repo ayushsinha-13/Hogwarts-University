@@ -3,52 +3,36 @@ const teacher = require('../models/teacher_model');
 const admin = require('../models/admin_model');
 
 
-//
+
 //  student
-//
+
 
 create_student = async(req,res)=>{
     const uid = req.body.uid
     const name = req.body.name
     const dob  = req.body.dob
-    const course = req.body.course
     const password = req.body.password
     const gender = req.body.gender
-    const bloodGroup = req.body.bloodGroup
-    const admission_year = req.body.admission_year
     const address = req.body.address
     const email = req.body.email
-    const marks = req.body.marks
-    const grades = req.body.grades
     const section = req.body.section
-    const cgpa = req.body.cgpa
-    const sgpa = req.body.sgpa
     const phone = req.body.phone
-    const semester = req.body.semester
 
   const newStudent = new student({
     uid : uid ,
     name : name ,
     dob : dob ,
-    course : course ,
     password : password,
     gender : gender ,
-    bloodGroup : bloodGroup,
-    admission_year : admission_year,
     address : address ,
     email : email ,
-    marks : marks ,
-    grades : grades ,
     section : section ,
-    cgpa : cgpa,
-    sgpa : sgpa ,
-    phone : phone ,
-    semester : semester,
+    phone : phone 
   })
 
   newStudent.save((err)=>{
           if(!err){
-              return res.redirect('Confirmation');
+              return res.redirect('Dashboard-Admin');
           }else{
               console.log(err);
               return res.redirect("/");
@@ -57,9 +41,9 @@ create_student = async(req,res)=>{
 }
 
 
-//
+
 //  teacher
-//
+
 
 
 create_teacher = async(req,res)=>{
@@ -69,13 +53,9 @@ create_teacher = async(req,res)=>{
     const spelization = req.body.spelization
     const password = req.body.password
     const gender = req.body.gender
-    const bloodGroup = req.body.bloodGroup
     const joiningyear = req.body.joiningyear
     const address = req.body.address
     const email = req.body.email
-    const marks = req.body.marks
-    const attendance = req.body.attendance
-    const grades = req.body.grades
     const phone = req.body.phone
 
     const newTeacher = new teacher({
@@ -85,20 +65,15 @@ create_teacher = async(req,res)=>{
         spelization : spelization, 
         password : password,
         gender : gender ,
-        bloodGroup : bloodGroup , 
         joiningyear : joiningyear , 
         address : address ,
-        email : email ,
-        marks : marks ,
-        attendance : attendance , 
-        grades : grades, 
-        phone : phone, 
-    
+        email : email , 
+        phone : phone
     })
   
     newTeacher.save((err)=>{
             if(!err){
-                return res.redirect('Confirmation');
+                return res.redirect('Dashboard-Admin');
             }else{
                 console.log(err);
                 return res.redirect("/");
@@ -108,16 +83,10 @@ create_teacher = async(req,res)=>{
 
 
 
-
-  
-//
-//  teacher
-//
+//  admin
 
 
-
-
-create_student = async(req,res)=>{
+create_admin = async(req,res)=>{
     const a_id = req.body.a_id
     const password = req.body.a_id
 
@@ -138,4 +107,8 @@ create_student = async(req,res)=>{
   }
   
 
-
+module.exports = {
+    create_student,
+    create_teacher,
+    create_admin
+}
