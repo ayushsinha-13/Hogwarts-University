@@ -129,6 +129,7 @@ app.route('/Help-admin')
 
 app.route('/Student-admin')
 .get((req,res)=> res.render("admin student"))
+.post(controller.create_student)
 
 
 
@@ -139,13 +140,11 @@ app.route('/Teacher-admin')
 app.route('/Timetable-admin')
 .get((req,res)=> res.render("admin timetable"))
 
-module.exports = app;  
-
-
-
 
 
 
 
 app.route('*')
     .get((req,res)=> res.render('Error'))
+
+module.exports = app;  
