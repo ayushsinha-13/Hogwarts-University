@@ -118,12 +118,6 @@ app.route('/Dashboard-admin')
 
 
 
-app.route('/Feedback-admin')
-.get((req,res)=> res.render("admin feedback"))
-
-
-app.route('/Help-admin')
-.get((req,res)=> res.render("admin help"))
 
 
 
