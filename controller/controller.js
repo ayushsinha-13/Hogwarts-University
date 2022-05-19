@@ -96,7 +96,7 @@ create_admin = async(req,res)=>{
         password : password,
     })
   
-    newAdmin.save((err)=>{
+      newAdmin.save((err)=>{
             if(!err){
                 return res.redirect('Confirmation');
             }else{
@@ -104,7 +104,9 @@ create_admin = async(req,res)=>{
                 return res.redirect("/");
             }
         });
-  }
+ 
+ 
+    }
   
 
 module.exports = {

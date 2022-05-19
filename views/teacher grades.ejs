@@ -170,15 +170,14 @@
                     <%var count = i+1;%>
                     <th scope="row"><%=count%></th>
                 <td><%=student[i].name%></td>
-                <form action="/cpp" method="post">
-                    <td><input type="text" placeholder="Marks" id="marks" name="marks"><p><%=student[i].cpp[0].marks%></p></td>
-                    <td><input type="text" placeholder="Attendance" id="attendance" name="attendance"><p><%=student[i].cpp[0].attendance%></p></td>
-                    <td><input type="text" placeholder="Grade" id="grade" name="grade"><p><%=student[i].cpp[0].grade%></p></td>
-                    <input type="hidden" value="<%=student[i].uid%>" name="uid">
-                    <td><button type="submit" class="btn btn-dark" style="
-                      width: 50px;
-                  " ><i class="fas fa-check-circle"></i></button></td>
-                </form>
+                <form action="/web" method="post">
+                  <td><input type="text" placeholder="Marks" id="marks" name="marks" ><p><%=student[i].web[0].marks%></p></td>
+                  <td><input type="text" placeholder="Grade" id="grade" name="grade" ><p><%=student[i].web[0].grade%></p></td>
+                  <input type="hidden" value="<%=student[i].uid%>" name="uid">
+                  <td><button type="submit" class="btn btn-dark" style="
+                    width: 50px;
+                " value="<%=i%>"><i class="fas fa-check-circle"></i></button></td>
+              </form>
               </tr>
                 <%}%>
             </tbody>
@@ -208,14 +207,13 @@
                 <th scope="row"><%=count%></th>
                 <td><%=student[i].name%></td>
                 <form action="/web" method="post">
-                    <td><input type="text" placeholder="Marks" id="marks" name="marks" ><p><%=student[i].web[0].marks%></p></td>
-                    <td><input type="text" placeholder="Attendance" id="attendance" name="attendance" ><p><%=student[i].web[0].attendance%>%</p></td>
-                    <td><input type="text" placeholder="Grade" id="grade" name="grade" ><p><%=student[i].web[0].grade%></p></td>
-                    <input type="hidden" value="<%=student[i].uid%>" name="uid">
-                    <td><button type="submit" class="btn btn-dark" style="
-                      width: 50px;
-                  " value="<%=i%>"><i class="fas fa-check-circle"></i></button></td>
-                </form>
+                  <td><input type="text" placeholder="Marks" id="marks" name="marks" ><p><%=student[i].web[0].marks%></p></td>
+                  <td><input type="text" placeholder="Grade" id="grade" name="grade" ><p><%=student[i].web[0].grade%></p></td>
+                  <input type="hidden" value="<%=student[i].uid%>" name="uid">
+                  <td><button type="submit" class="btn btn-dark" style="
+                    width: 50px;
+                " value="<%=i%>"><i class="fas fa-check-circle"></i></button></td>
+              </form>
               </tr>
                 <%}%>
             </tbody>
@@ -246,15 +244,14 @@
               <tr>
                 <th scope="row"><%=count%></th>
                 <td><%=student[i].name%></td>
-                <form action="/dbms" method="post">
-                    <td><input type="text" placeholder="Marks" name="marks"><p><%=student[i].dbms[0].marks%></p></td>
-                    <td><input type="text" placeholder="Attendance" name="attendance"><p><%=student[i].dbms[0].attendance%>%</p></td>
-                    <td><input type="text" placeholder="Grade" name="grade"><p><%=student[i].dbms[0].grade%></p></td>
-                    <input type="hidden" value="<%=student[i].uid%>" name="uid">
-                    <td><button type="submit" class="btn btn-dark" style="
-                      width: 50px;
-                  " value="<%=i%>"><i class="fas fa-check-circle"></i></button></td>
-                </form>
+                <form action="/web" method="post">
+                  <td><input type="text" placeholder="Marks" id="marks" name="marks" ><p><%=student[i].web[0].marks%></p></td>
+                  <td><input type="text" placeholder="Grade" id="grade" name="grade" ><p><%=student[i].web[0].grade%></p></td>
+                  <input type="hidden" value="<%=student[i].uid%>" name="uid">
+                  <td><button type="submit" class="btn btn-dark" style="
+                    width: 50px;
+                " value="<%=i%>"><i class="fas fa-check-circle"></i></button></td>
+              </form>
               </tr>
                 <%}%>
             </tbody>
