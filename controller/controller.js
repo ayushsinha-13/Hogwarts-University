@@ -1,6 +1,7 @@
 const student = require('../models/student_model');
 const teacher = require('../models/teacher_model');
 const admin = require('../models/admin_model');
+const { find } = require('../models/student_model');
 
 
 
@@ -38,6 +39,13 @@ create_student = async(req,res)=>{
               return res.redirect("/");
           }
       });
+}
+
+get_student = async(req,res)=>{
+    const eid = req.body.eid
+    await Student.find({}, (err,found)=>{
+        res.render('Student')
+    }).clone()
 }
 
 
@@ -81,7 +89,12 @@ create_teacher = async(req,res)=>{
         });
   }
 
-
+get_teacher = async(req,res)=>{
+    const eid = req.body.eid
+    await Teacher.find({}, (err,found)=>{
+        res.render('Teacher')
+    }).clone()
+}
 
 //  admin
 
@@ -96,7 +109,7 @@ create_admin = async(req,res)=>{
         password : password,
     })
   
-      newAdmin.save((err)=>{
+    newAdmin.save((err)=>{
             if(!err){
                 return res.redirect('Confirmation');
             }else{
@@ -104,12 +117,19 @@ create_admin = async(req,res)=>{
                 return res.redirect("/");
             }
         });
- 
- 
-    }
+  }
   
+  get_admin = async(req,res)=>{
+    const username = req.body.username
+    await Admin.find({}, (err,found)=>{
+        res.render('Teacher')
+    }).clone()
+  }
 
 module.exports = {
+    get_student,
+    get_teacher,
+    get_admin,
     create_student,
     create_teacher,
     create_admin
